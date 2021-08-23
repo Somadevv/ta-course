@@ -23,7 +23,6 @@
         * itsdangerous==1.1.0
         * pymongo==3.11.2
         * Werkzeug==1.0.1
-        * WTForms==2.3.3
 * [MongoDB](https://www.mongodb.com/1)
     * MongoDB was used to create the document based databases(collections) used as data storage for this project.
 * [Materialize](https://materializecss.com/)
@@ -36,8 +35,6 @@
 	* Git is used as version control software to commit and push code to the GitHub repository where the source code is stored.
 * [Heroku](https://dashboard.heroku.com/apps)
     * Heroku was used to deploy the live website.
-* [TinyJPG](https://tinyjpg.com/)
-	* TinyJPG/TinyPNG is used to reduce the file sizes of images before being deployed to reduce storage and bandwith.
 * [Google Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools)
 	* Google chromes built in developer tools are used to inspect page elements and help debug issues with the site layout and test different CSS styles.
 * [balsamiq Wireframes](https://balsamiq.com/wireframes/)
@@ -47,7 +44,4 @@ va](https://www.canva.com/)
     * Canva design was used in order to create the website logo.
 * [Font Awesome](https://fontawesome.com/)
     * All the Icons displayed throughout the website are Font Awesome icons.
-* [Favicon](https://favicon.io/)
-    * Favicon.io was used to make the site favicon 
-* [Techsini](http://techsini.com/multi-mockup/index.php)
-    * Multi Device Website Mockup Generator was used to create the Mock up image in this README
+
