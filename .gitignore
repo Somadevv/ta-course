@@ -4,9 +4,11 @@ bin-release/
 [Oo]bj/
 [Bb]in/
 
+
 # Other files and folders
 .settings/
-
+env.py
+requirements.txt
 # Executables
 *.swf
 *.air
