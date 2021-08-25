@@ -39,6 +39,7 @@
 * [Font Awesome](https://fontawesome.com/)
     * All the Icons displayed throughout the website are Font Awesome icons.
 
+
 Home:
 ![Home](static/images/readme/wireframes/home.png)<br>
 Course:
