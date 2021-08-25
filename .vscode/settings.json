@@ -2,8 +2,12 @@
     "cSpell.ignoreWords": [
         "bson",
         "canva",
+        "datepicker",
         "dbname",
+        "dnspython",
+        "downdrops",
         "flask",
+        "itsdangerous",
         "mongo",
         "objectid",
         "pymongo",
