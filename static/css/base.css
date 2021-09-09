@@ -1,6 +1,7 @@
 /* Google Font Link */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
 /* GLOBAL */
 *{
   margin: 0;
@@ -30,6 +31,10 @@ body {
 }
 .orange {
   color: var(--orange);
+  
+}
+.orange-bg {
+  background-color: var(--orange);
 }
 #mobile-demo li {
   padding: 10px;
@@ -45,6 +50,9 @@ body {
 #mobile-demo li:hover {
   background: #2b293d;
 }
+.uppercase {
+  text-transform: uppercase;
+}
 .hidden {
   display: none;
 }
@@ -53,30 +61,38 @@ body {
   height: 50px;
 }
 
-
 /* TYPOGRAPHY */
 
 /* TITLE TEXT */
 .title-text-lg, .title-text-md, .title-text-sm {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
+  font-variant: small-caps;
   font-weight: 700;
+  color: white;
+  
 }
 .title-text-lg {
-  font-size: 1.5rem;
+  font-size: 2rem;
+  
 }
 .title-text-md {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
 }
 .title-text-sm  {
-  font-size: 1rem;
+  font-size: 1.25rem;
 }
 
+.title-text-lg, .title-text-md, .title-text-sm, .descriptive-text-lg,
+.descriptive-text-md, .descriptive-text-sm {
+  color: white;
+}
 /* DESCRIPTIVE TEXT */
 
 .descriptive-text-lg {
   font-size: 1.25rem;
 }
 .descriptive-text-md {
+  
   font-size: 1rem;
 }
 .descriptive-text-sm {
@@ -93,12 +109,7 @@ body {
 
 
 /* SIDEBAR NAVIGATION */
-#logout-icon {
-  position: absolute;
-  bottom: 80px;
-  margin: 8px 0;
-  list-style: none;
-}
+
 .sidebar{
   position: fixed;
   left: 0;
@@ -110,9 +121,12 @@ body {
   z-index: 99;
   transition: all 0.5s ease;
 }
+#login-highlighter {
+  color: var(--orange);
+}
 /* WHEN SIDEBAR IS TOGGLED */
 .sidebar.open{
-  width: 250px;
+  width: 200px;
 }
 .sidebar .logo-details{
   height: 60px;
@@ -125,6 +139,7 @@ body {
   transition: all 0.5s ease;
 }
 .sidebar .logo-details .logo_name{
+  text-align: center;
   color: var(--orange);
   font-size: 18px;
   font-weight: 600;
@@ -162,14 +177,29 @@ body {
 .sidebar .nav-list{
   position: relative;
   margin-top: 20px;
-  height: 100%;
+  height: 90%;
+}
+
+#logged-in, #logged-out {
+  position: absolute;
+  bottom: 0;
+  width: 50px;
+}
+#logged-in:hover, #logged-out:hover {
+  position: absolute;
+
+  width: 50px;
+}
+.sidebar.open {
+  position: absolute;
+  bottom: 80px;
 }
 .sidebar li{
   position: relative;
   margin: 8px 0;
   list-style: none;
 }
-.sidebar li .tooltip{
+.sidebar li .tooltip {
   position: absolute;
   top: -20px;
   left: calc(100% + 15px);
@@ -221,7 +251,7 @@ body {
   align-items: center;
   text-decoration: none;
   transition: all 0.4s ease;
-  background: var(--main-color);
+
 }
 .sidebar li a:hover{
   background: #FFF;
@@ -242,7 +272,7 @@ body {
 .sidebar li a:hover .links_name,
 .sidebar li a:hover i{
   transition: all 0.5s ease;
-  color: var(--main-color);
+  color: var(--orange);
 }
 .sidebar li i{
   height: 50px;
@@ -283,9 +313,7 @@ body {
   color: #fff;
   white-space: nowrap;
 }
-.sidebar li.profile .job{
-  font-size: 12px;
-}
+
 .sidebar .profile #log_out{
   position: absolute;
   top: 50%;

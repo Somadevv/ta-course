@@ -1,93 +1,80 @@
 let closeBtn = document.querySelector("#btn");
 let sideBar = document.querySelector(".sidebar");
 let newWindow = window.matchMedia("(max-width: 768px)");
-
-// function tempAlert(msg,duration)
-// {
-//  var el = document.createElement("div");
-//  el.setAttribute("style","position:absolute;top:40%;left:20%;background-color:white;");
-//  el.innerHTML = msg;
-//  setTimeout(function(){
-//   el.parentNode.removeChild(el);
-//  },duration);
-//  document.body.appendChild(el);
-// }
-// tempAlert("close",1000);
-
-// function setCookie(name,value,days) {
-//     var expires = "";
-//     if (days) {
-//         var date = new Date();
-//         date.setTime(date.getTime() + (days*24*60*60*1000));
-//         expires = "; expires=" + date.toUTCString();
-//     }
-//     document.cookie = name + "=" + (value || "")  + expires + "; path=/";
-// }
-// function getCookie(name) {
-//     var nameEQ = name + "=";
-//     var ca = document.cookie.split(';');
-//     for(var i=0;i < ca.length;i++) {
-//         var c = ca[i];
-//         while (c.charAt(0)==' ') c = c.substring(1,c.length);
-//         if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-//     }
-//     return null;
-// }
-// function eraseCookie(name) {   
-//     document.cookie = name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-// }
-// setCookie('SLAP','testcookie',7);
-// var firstCookie = getCookie('SLAP');
+let getStartedBtn = document.getElementById('getStartedBtn')
+let getStartedText = document.getElementById('getStartedText')
 
 
 
-// Materialize initilize mobile collapsable
-$(document).ready(function(){
-  $('.sidenav').sidenav();
+getStartedBtn.addEventListener('mouseenter', () => {
+  getStartedBtn.style.background = 'white'
+  getStartedText.style.color = 'orange'
+});
+getStartedBtn.addEventListener('mouseleave', () => {
+  getStartedBtn.style.background = '#11101D'
+  getStartedText.style.color = 'white'
 });
 
-closeBtn.addEventListener("click", () => {
-  sidebar.classList.toggle("open");
-  menuBtnChange(); 
-  toggleLogo();
-});
+// if (getStartedBtn.addEventListener("mouseenter", () => {
+//   getStartedBtn.style.background = 'red'})) {
+ 
+// }
+// if (getStartedBtn.addEventListener("mouseleave", () => {
+//   getStartedBtn.style.background = 'blue'})) {
+ 
+// }
+
+//   getStartedText.addEventListener("mouseenter", () => {
+//     getStartedBtn.style.color = 'red'
+//   });
+
 
 // Function to toggle the logos display property on the side navigation bar
-function toggleLogo() {
+let toggleLogo = () => {
   let logo = document.querySelector("#nav-logo");
   if (logo.classList.contains("hidden")) {
     // Remove hidden class to element
     logo.classList.remove("hidden");
   } else {
     // Add hidden class to element
-    logo.classList.add("hidden")
+    logo.classList.add("hidden");
   }
-}
 
-// Function to toggle the width of the side navigation bar
-function menuBtnChange() {
-  if (sidebar.classList.contains("open")) {
-    //replacing the icon class
-    closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");
-  } else {
-    //replacing the icon class
-    closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");
-  }
-}
+  // Function to toggle the width of the side navigation bar
+  let menuBtnChange = () => {
+    if (sideBar.classList.contains("open")) {
+      //replacing the icon class
+      closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+    } else {
+      //replacing the icon class
+      closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+    }
+  };
 
-// Function to check wim
-function myFunction(x) {
-  let mobileNav = document.querySelector("#mobile-nav");
-  if (x.matches) { // If media query matches
-    mobileNav.classList.remove("hidden")
-    sideBar.classList.add("hidden")
-  } else {
-    mobileNav.classList.add("hidden")
-    sideBar.classList.remove("hidden")
-  }
-}
+  // Function to check wim
+  let myFunction = (x) => {
+    let mobileNav = document.querySelector("#mobile-nav");
+    if (x.matches) {
+      // If media query matches
+      mobileNav.classList.remove("hidden");
+      sideBar.classList.add("hidden");
+    } else {
+      mobileNav.classList.add("hidden");
+      sideBar.classList.remove("hidden");
+    }
+  };
 
-myFunction(newWindow) // Call listener function at run time
-newWindow.addListener(myFunction) // Attach listener function on state changes
+  // Function to toggle the navigation sidebar
+  closeBtn.addEventListener("click", () => {
+    sideBar.classList.toggle("open");
+    menuBtnChange();
+    toggleLogo();
+    getStartedState();
+  });
 
-
+  $(document).ready(function () {
+    $(".sidenav").sidenav();
+    myFunction(newWindow); // Call listener function at run time
+    newWindow.addListener(myFunction); // Attach listener function on state changes
+  });
+};

@@ -19,10 +19,7 @@
 </head>
 
 <body>
-  {% if session.user %}
-  
-  
-  {% endif %}
+
   <!-- MOBILE/TABLET NAVIGATION BAR -->
   <nav class="hidden" id="mobile-nav">
     <div class="nav-wrapper main-color">
@@ -63,55 +60,67 @@
   <div class="sidebar">
     <div class="logo-details">
       <img src="/static/images/logo.png" class="logo-nav hidden" id="nav-logo" alt="logo image">
-      <a href="{{ url_for('home') }}"  class="logo_name title-text-lg">Trading Course</a>
+      <a href="{{ url_for('home') }}"  class="logo_name title-text-lg">Home</a>
       <i class='bx bx-menu' id="btn"></i>
     </div>
+    
     <ul class="nav-list">
       <li>
-        <a href="#">
-          <i class='bx bx-grid-alt'></i>
-          <span class="links_name">Dashboard</span>
-
+        <a href="{{ url_for('home') }}">
+          <i class='bx bx-home'></i>
+          <span class="links_name">Home</span>
         </a>
-        <span class="tooltip">Dashboard</span>
-
+        <span class="tooltip">Home</span>
       </li>
+      
+      {% if session.user %}
       <li>
-        <a href="#">
-          <i class='bx bx-user'></i>
-          <span class="links_name">User</span>
+        <a href="{{ url_for('profile', username=session['user']) }}">
+          <i class='bx bxs-contact'></i>
+          <span class="links_name">Profile</span>
         </a>
-        <span class="tooltip">User</span>
+        <span class="tooltip">Profile</span>
       </li>
+      {% endif %}
       <li>
-        <a href="#">
-          <i class='bx bx-customize'></i>
-          <span class="links_name">Courses</span>
-        </a>
-        <span class="tooltip">Courses</span>
-      </li>
-      <li>
-        <a href="#">
+        <a href="{{ url_for('course') }}">
           <i class='bx bx-folder-open'></i>
+          <span class="links_name">Course</span>
+        </a>
+        <span class="tooltip">Course</span>
+      </li>
+      <li>
+        <a href="{{ url_for('modules') }}">
+          <i class='bx bx-book-open'></i>
           <span class="links_name">Modules</span>
         </a>
         <span class="tooltip">Modules</span>
       </li>
       <li>
-        <a href="#">
+        <a href="{{ url_for('about') }}">
           <i class='bx bx-info-circle'></i>
           <span class="links_name">About</span>
         </a>
         <span class="tooltip">About</span>
       </li>
-
-      <li id="logout-icon">
-        <a href="#">
-          <i class='bx bx-log-out'></i>
+      {% if session.user %}
+      <li id="logged-in">
+        <a href="{{ url_for('logout') }}">
+          <i class='bx bx-log-out' id="login-highlighter"></i>
           <span class="links_name">Logout</span>
         </a>
         <span class="tooltip">Logout</span>
       </li>
+      {% else %}
+      <li id="logged-out">
+        <a href="{{ url_for('login') }}">
+          <i class='bx bx-user' id="login-highlighter"></i>
+          <span class="links_name">Login</span>
+        </a>
+        <span class="tooltip">Login</span>
+      </li>
+      {% endif %}
+
     </ul>
   </div>
 
