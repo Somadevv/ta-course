@@ -2,107 +2,133 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
-        integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA=="
-        crossorigin="anonymous" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-        type="text/css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" type="text/css">
-    <title>Trading Course</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
+    integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA=="
+    crossorigin="anonymous" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    type="text/css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}" type="text/css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}" type="text/css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/course.css') }}" type="text/css">
+  <title>Trading Course</title>
 </head>
 
 <body>
-      <ul class="sidenav" id="mobile-demo">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">JavaScript</a></li>
-      </ul>
+  {% if session.user %}
+  
+  
+  {% endif %}
+  <!-- MOBILE/TABLET NAVIGATION BAR -->
+  <nav class="hidden" id="mobile-nav">
+    <div class="nav-wrapper main-color">
+      <a href="{{ url_for('home') }}" class="brand-logo title-text-lg">Trading Course</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <a href="#" style="float: right;"><i class='bx bx-log-out' id="mobile-logout-icon"></i><span class="links_name" id="mobile-logout-link">Logout</span></a>
+    </div>
 
-        <div class="sidebar">
-          <div class="logo-details">
-            <i class='bx bxl-c-plus-plus icon'></i>
-              <div class="logo_name">Trading Course</div>
-              <i class='bx bx-menu' id="btn" ></i>
-          </div>
-          <ul class="nav-list">
+  </nav>
 
-            <li>
-              <a href="#">
-                <i class='bx bx-grid-alt'></i>
-                <span class="links_name">Dashboard</span>
-              </a>
-               <span class="tooltip">Dashboard</span>
-            </li>
-            <li>
-             <a href="#">
-               <i class='bx bx-user' ></i>
-               <span class="links_name">User</span>
-             </a>
-             <span class="tooltip">User</span>
-           </li>
-           <li>
-             <a href="#">
-               <i class='bx bx-chat' ></i>
-               <span class="links_name">Messages</span>
-             </a>
-             <span class="tooltip">Messages</span>
-           </li>
-           <li>
-             <a href="#">
-               <i class='bx bx-pie-chart-alt-2' ></i>
-               <span class="links_name">Analytics</span>
-             </a>
-             <span class="tooltip">Analytics</span>
-           </li>
-           <li>
-             <a href="#">
-               <i class='bx bx-folder' ></i>
-               <span class="links_name">File Manager</span>
-             </a>
-             <span class="tooltip">Files</span>
-           </li>
-           <li>
-             <a href="#">
-               <i class='bx bx-cart-alt' ></i>
-               <span class="links_name">Order</span>
-             </a>
-             <span class="tooltip">Order</span>
-           </li>
-           <li>
-             <a href="#">
-               <i class='bx bx-heart' ></i>
-               <span class="links_name">Saved</span>
-             </a>
-             <span class="tooltip">Saved</span>
-           </li>
-           <li>
-             <a href="#">
-               <i class='bx bx-cog' ></i>
-               <span class="links_name">Setting</span>
-             </a>
-             <span class="tooltip">Setting</span>
-           </li>
-          
-          </ul>
-        </div>
+  <ul class="sidenav main-color" id="mobile-demo">
+    <li>
+      <a href="#" id="mobile-link1">
+        <i class='bx bx-grid-alt' id="mobile-icon1"></i>
+        <span class="links_name">Dashboard</span></a>
+    </li>
+    <li>
+      <a href="#" id="mobile-link2">
+        <i class='bx bx-user' id="mobile-icon2"></i>
+        <span class="links_name">User</span></a>
+    </li>
+    <li>
+      <a href="#" id="mobile-link3">
+        <i class='bx bx-chat' id="mobile-icon3"></i>
+        <span class="links_name">Messages</span></a>
+     
+    </li>
+    <li>
+      <a href="#" id="mobile-link4">
+        <i class='bx bx-pie-chart-alt-2' id="mobile-icon4"></i>
+        <span class="links_name">Analytics</span></a>
+    </li>
+  </ul>
 
 
-    <main class="container">
-        {% block content %}
-        <h1>home</h1>
-        {% endblock %}
-    </main>
+
+  <!-- DESKTOP NAVIGATION SIDEBAR -->
+  <div class="sidebar">
+    <div class="logo-details">
+      <img src="/static/images/logo.png" class="logo-nav hidden" id="nav-logo" alt="logo image">
+      <a href="{{ url_for('home') }}"  class="logo_name title-text-lg">Trading Course</a>
+      <i class='bx bx-menu' id="btn"></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+        <a href="#">
+          <i class='bx bx-grid-alt'></i>
+          <span class="links_name">Dashboard</span>
+
+        </a>
+        <span class="tooltip">Dashboard</span>
+
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bx-user'></i>
+          <span class="links_name">User</span>
+        </a>
+        <span class="tooltip">User</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bx-customize'></i>
+          <span class="links_name">Courses</span>
+        </a>
+        <span class="tooltip">Courses</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bx-folder-open'></i>
+          <span class="links_name">Modules</span>
+        </a>
+        <span class="tooltip">Modules</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bx-info-circle'></i>
+          <span class="links_name">About</span>
+        </a>
+        <span class="tooltip">About</span>
+      </li>
+
+      <li id="logout-icon">
+        <a href="#">
+          <i class='bx bx-log-out'></i>
+          <span class="links_name">Logout</span>
+        </a>
+        <span class="tooltip">Logout</span>
+      </li>
+    </ul>
+  </div>
 
 
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
-        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="{{ url_for('static', filename='scripts/script.js') }}"></script>
+
+    {% block content %}
+
+    {% endblock %}
+    
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="{{ url_for('static', filename='scripts/script.js') }}"></script>
+
 </body>
 
 </html>

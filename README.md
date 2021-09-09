@@ -40,9 +40,10 @@
 ## User Experience Design
 ### **The Strategy Plane**
 
-This projects focus is to provide a well structured, easy to read technical analysis course targeting beginners.
+This project focuses on providing a well-structured, digestible approach to technical analysis in an introductory course format targeted at beginners. Learners will receive an introduction to the world of trading looking in-depth at the importance of technical analysis. (Add another thing they will learn)
 
-Learners will receive an introduction to the world of trading and how important technical analysis is We start with a beginners guide to financial markets and work from the bottom up. Giving the user a good overview of fundamental and technical analysis.
+We start with a beginner’s guide to the financial marketplace; from there we take a deeper look at… This will provide a comprehensive overview of the fundamentals of technical analysis and prepare the user to progress through further intermediate studies.
+
 
 #### Site Goals
 * To help users understand technical analysis and why it's an important fundamental when learning to trade
@@ -390,7 +391,8 @@ for your own idea. - Definition from [Github Docs](https://docs.github.com/en/fr
 ****
 
 ## Credits
-TO BE FILLED IN
+[CodingLab](https://www.youtube.com/watch?v=wEfaoAa99XY&list=LLtq7zXJyPFDANiQE5jmtrdg&index=1)
+This website uses the HTML/CSS sidebar navigation linked in the description of the video linked above
 
 
 

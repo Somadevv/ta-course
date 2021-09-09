@@ -1,7 +1,20 @@
 {% extends "base.html" %}
+
 {% block content %}
-<section class="home-section">
-    <div class="text">Dashboard</div>
-</section>
+
+    {% if session.user %}
+    <div class="logged-in">
+        <h1>slap it up mate, you're logged in :)</h1>
+    </div>
+    {% else %}
+    <div id="hero-image">
+    <span class="hero-title title-text-lg">Title</span>
+    <p class="hero-description descriptive-text-lg">Lorem slaps it up mate watch it fly</p>
+    <a class="waves-effect waves-light btn" href="{{ url_for('register') }}">Not logged</a>
+    </div>
+        <div class="main-section">
+    </div>
+    {% endif %}
+
 
 {% endblock %}
