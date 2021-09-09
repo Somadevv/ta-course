@@ -1,33 +1,116 @@
 /* Google Font Link */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-/* GLOBAL PROPERTIES */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@200&display=swap');
+/* GLOBAL */
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins" , sans-serif;
+  font-family: 'Work Sans', sans-serif;
+}
+body {
+  overflow-x: hidden;
 }
 
 /* VARIABLES & REUSABLES */
 :root {
-  --main-color: #11101D;
+  --main-bg: #11101D;
+  --secondary-bg: #8787c4;
+  --third-bg: #1e1e2c;
+  --orange: #FBB800;
 }
-/* REUSABLES */
 .main-color {
-  background: #11101D;
+  background: var(--main-bg)
 }
+.secondary-color {
+  background: var(--secondary-bg)
+}
+.third-color {
+  background: var(--secondary-bg)
+}
+.orange {
+  color: var(--orange);
+}
+#mobile-demo li {
+  padding: 10px;
+}
+/* Materialize overrides classes on mobile collapsibles, used id's to override this */
+#mobile-demo i {
+  color: white;
+}
+#mobile-demo a {
+  font-size: 1.25rem;
+  color: white;
+}
+#mobile-demo li:hover {
+  background: #2b293d;
+}
+.hidden {
+  display: none;
+}
+/* Used to create empty sidebar space */
+.empty-div {
+  height: 50px;
+}
+
+
+/* TYPOGRAPHY */
+
+/* TITLE TEXT */
+.title-text-lg, .title-text-md, .title-text-sm {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+.title-text-lg {
+  font-size: 1.5rem;
+}
+.title-text-md {
+  font-size: 1.25rem;
+}
+.title-text-sm  {
+  font-size: 1rem;
+}
+
+/* DESCRIPTIVE TEXT */
+
+.descriptive-text-lg {
+  font-size: 1.25rem;
+}
+.descriptive-text-md {
+  font-size: 1rem;
+}
+.descriptive-text-sm {
+  font-size: .75rem;
+}
+
+
+/* LOGO NAVIGATION IMAGE */
+.logo-nav {
+  width: 50px;
+  height: 50px;
+}
+/* MATERIALIZE MOBILE NAV */
+
+
 /* SIDEBAR NAVIGATION */
+#logout-icon {
+  position: absolute;
+  bottom: 80px;
+  margin: 8px 0;
+  list-style: none;
+}
 .sidebar{
   position: fixed;
   left: 0;
   top: 0;
-  height: 100%;
+  height: 100vh;
   width: 78px;
-  background: var(--main-color);
+  background: var(--main-bg);
   padding: 6px 14px;
   z-index: 99;
   transition: all 0.5s ease;
 }
+/* WHEN SIDEBAR IS TOGGLED */
 .sidebar.open{
   width: 250px;
 }
@@ -42,8 +125,8 @@
   transition: all 0.5s ease;
 }
 .sidebar .logo-details .logo_name{
-  color: #fff;
-  font-size: 20px;
+  color: var(--orange);
+  font-size: 18px;
   font-weight: 600;
   opacity: 0;
   transition: all 0.5s ease;
@@ -77,6 +160,7 @@
   line-height: 60px;
 }
 .sidebar .nav-list{
+  position: relative;
   margin-top: 20px;
   height: 100%;
 }
@@ -219,29 +303,17 @@
   background: none;
 }
 
-/* USE THIS FOR HOME SCREEN? */
-.home-section{
-  position: relative;
-  background: gray;
-  min-height: 100vh;
-  top: 0;
-  left: 78px;
-  width: calc(100% - 78px);
-  transition: all 0.5s ease;
-  z-index: 2;
-}
+
 .sidebar.open ~ .home-section{
   left: 250px;
   width: calc(100% - 250px);
 }
-.home-section .text{
-  display: inline-block;
-  color: var(--main-color);
-  font-size: 25px;
-  font-weight: 500;
-  margin: 18px
-}
+
 @media (max-width: 420px) {
+
+  .empty-div {
+    height: 120px;
+  }
   .sidebar li .tooltip{
     display: none;
   }
