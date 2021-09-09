@@ -40,7 +40,6 @@ def register():
             "password": generate_password_hash(request.form.get("password"))
         }
         mongo.db.users.insert_one(register)
-
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
@@ -63,6 +62,7 @@ def login():
                         session["user"] = request.form.get("username").lower()
                         flash("Welcome, {}".format(
                             request.form.get("username")))
+                       
                         return redirect(url_for(
                             "profile", username=session["user"]))
             else:
@@ -93,9 +93,9 @@ def profile(username):
 @app.route("/logout")
 def logout():
     # remove user from session cookie
-    flash("You have been logged out")
-    session.pop("user")
-    return redirect(url_for("login"))
+    session.clear()
+    return redirect(url_for("home"))
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
