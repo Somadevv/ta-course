@@ -6,6 +6,8 @@ bin-release/
 
 
 # Other files and folders
+.vscode
+.DS_Store
 .settings/
 env.py
 requirements.txt
