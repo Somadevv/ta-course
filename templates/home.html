@@ -1,49 +1,38 @@
 {% extends "base.html" %}
-
 {% block content %}
 
-{% if session.user %}
-<div class="logged-in">
-    <h1>slap it up mate, you're logged in :)</h1>
-</div>
-{% else %}
-<div id="hero-image"></div>
-<div class="hero-content-container">
-    <span class="hero-title title-text-lg white-text">Title</span>
-    <p class="hero-description descriptive-text-lg white-text">Lorem slaps it up mate watch it fly</p>
-    <button type="button" class="waves-effect waves-light btn main-color" id="getStartedBtn">
+<body>
+    <div class="hero-content-container">
+        <span class="hero-title title-text-lg white-text">Title</span>
+        <p class="hero-description descriptive-text-lg white-text">Lorem slaps it up mate watch it fly</p>
+        <!-- <button type="button" class="waves-effect waves-light btn main-color" id="getStartedBtn">
         <a href="{{ url_for('register') }}" class="title-text-sm" id="getStartedText">Get Started</a>
-    </button>
-</div>
-<div class="main-section">
-    <div class="home-content-container">
-        <div class="item">
-            <div class="item-container">
-                <span class="title-text-lg uppercase text-orange">Discover trading</span>
-                <p class="descriptive-text-md text-white">We have built a national network of education advocates who
-                    celebrate
-                    successes, call out challenges, and speak up in defense of needed reforms through blogs, videos,
-                    op-eds and public appearances.</p>
+    </button> -->
+    </div>
+    <div class="main-section">
+        <div class="container" id="features">
+            <div class="box">
+                <i class='feature-icon bx bx-bar-chart'></i>
+                <span class="feature-title">Trading</span>
+                <p class="feature-description">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC</p>
+            </div>
+            <div class="box">
+                <i class='feature-icon bx bxs-graduation'></i>
+                <span class="feature-title">Course</span>
+                <p class="feature-description">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC</p>
+            </div>
+            <div class="box">
+                <i class='feature-icon bx bx-comment-detail'></i>
+                <span class="feature-title">Comment</span>
+                <p class="feature-description">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC</p>
             </div>
         </div>
-        <div class="item">
-            <main>
-                <div class="box">
-                    <img src="static/images/trading3.png" class="home-trading-image" alt="trading image">
-                </div>
-                <div class="box">
-                    <img src="static/images/trading2.png" class="home-trading-image" alt="trading image">
-                </div>
-                <div class="box">
-                    <img src="static/images/trading.png" class="home-trading-image" alt="trading image">
-                </div>
-            </main>
-                   
-        </div>
-        
 
-        </div>
+
+
+        <!-- Course detail  -->
+        <!-- Module -->
+        <!-- About -->
     </div>
-</div>
-{% endif %}
+</body>
 {% endblock %}
