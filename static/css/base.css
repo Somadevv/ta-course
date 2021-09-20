@@ -11,6 +11,7 @@
 }
 body {
   overflow-x: hidden;
+  
 }
 
 /* VARIABLES & REUSABLES */
@@ -61,12 +62,22 @@ body {
 .hidden {
   display: none;
 }
-
+.centered {
+  text-align: center;
+}
 /* Used to create empty sidebar space */
 .empty-div {
   height: 50px;
 }
-
+.inline {
+  display: inline-block;
+}
+.right {
+  float: right;
+}
+.left {
+  float: left;
+}
 /* TYPOGRAPHY */
 
 /* TITLE TEXT */

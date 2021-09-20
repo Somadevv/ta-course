@@ -1,4 +1,8 @@
-body {
+
+.hero-content-container{
+  position: relative;
+  text-align: center;
+  padding-top: 100px;
   position: relative;
   width: calc(100% -78px);
   background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1)), url("/static/images/banner.png");
@@ -8,12 +12,6 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
-}
-.hero-content-container{
-  position: relative;
-  text-align: center;
-  height: 200px;
-  padding-top: 100px;
 }
 .container {
   display: flex;

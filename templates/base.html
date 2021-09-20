@@ -23,14 +23,12 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}" type="text/css">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}" type="text/css">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/404.css') }}" type="text/css">
+  
   <!-- TITLE -->
   <title>Trading Course</title>
 </head>
 
 <body>
-
-
-
   <!-- MOBILE/TABLET NAVIGATION BAR -->
   <nav class="hidden" id="mobile-nav">
     <div class="nav-wrapper main-color">
@@ -39,7 +37,6 @@
       <a href="#" style="float: right;"><i class='bx bx-log-out' id="mobile-logout-icon"></i><span class="links_name"
           id="mobile-logout-link">Logout</span></a>
     </div>
-
   </nav>
 
   <ul class="sidenav main-color" id="mobile-demo">
@@ -136,8 +133,8 @@
     </ul>
   </div>
 
-
   {% block content %}
+
 
   {% endblock %}
 

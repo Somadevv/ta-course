@@ -1,11 +1,32 @@
 {% extends "base.html" %}
 {% block content %}
+<div class="course-container">
+    <div class="module-container">
+        <div class="module-list">
+            <ul>
+                {% for m in moduleButtons %}
+                <li class="modules module-item title-text-sm">{{ m.title }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="course-view">
+        <div class="module-intro">
+            <img src="/static/images/trading3.png" alt="module intro image" id="module-intro-image">
+            <div class="module-box">
+                <span class="intro-title">Title</span>
+                <p class="intro-description">In 2014, the Department of Health made improvement in mental health a key priority. Its first objective was to ensure that mental health had equal priority with that of physical health and its second was to reduce the gap between people with mental health problems and the rest of the population (Department of Health, 2014).</p>
+            </div>
+        </div>
+        <div class="module-content">
+            <span class="content-title">What is a candlestick pattern</span>
+            <p class="content-description">In 2014, the Department of Health made improvement in mental health a key priority. Its first objective was to ensure that mental health had equal priority with that of physical health and its second was to reduce the gap between people with mental health problems and the rest of the population (Department of Health, 2014). Their vision was that everyone who needs it should have access to an intervention, through the ‘Improving Access to Psychological Therapies’ (IAPT) programmes including children and young people. While the Department of Health aimed to reduce waiting times in accessing services, more people were being offered the service and as a result, waiting lists significantly increased. This is a particular issue in Wales, where a significant amount of the population reside in rural areas and at considerable distance from psychological therapeutic services.
 
-<h1>SLAP!</h1>
-<h1>SLAP!</h1>
-<h1>SLAP!</h1>
-<h1>SLAP!</h1>
-
+                In Cardiff, research is currently ongoing to evaluate the potential of digital technology to both reduce waiting times in accessing services and provide people experiencing mental health problems access to much-needed support.</p>
+            
+        </div>
+    </div>
+</div>
 
 
 {% endblock %}

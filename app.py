@@ -33,7 +33,8 @@ def modules():
 
 @app.route("/course")
 def course():
-    return render_template("course.html")
+    moduleButtons = mongo.db.modules.find().sort("title", 1)
+    return render_template("course.html", moduleButtons=moduleButtons)
 
 
 @app.route("/about")
