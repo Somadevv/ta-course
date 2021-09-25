@@ -9,12 +9,14 @@ if os.path.exists("env.py"):
     import env
 
 
+
+
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
-TITLE = 'Trading slam'
+
 
 
 @app.route("/")
@@ -25,7 +27,8 @@ def home():
     else:
         return render_template("home.html")
 
-
+    
+    
 @app.route("/modules")
 def modules():
     return render_template("modules.html")
@@ -33,14 +36,13 @@ def modules():
 
 @app.route("/course")
 def course():
-    moduleButtons = mongo.db.modules.find().sort("title", 1)
-    return render_template("course.html", moduleButtons=moduleButtons)
+    titles = mongo.db.modules.find().sort("title", 1)
+    return render_template("course.html", titles=titles)
 
 
 @app.route("/about")
 def about():
     return render_template("about.html")
-
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -78,12 +80,12 @@ def login():
             # ensure hashed password matches user input
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
-                        session["user"] = request.form.get("username").lower()
-                        flash("Welcome, {}".format(
-                            request.form.get("username")))
-                       
-                        return redirect(url_for(
-                            "profile", username=session["user"]))
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome, {}".format(
+                    request.form.get("username")))
+
+                return redirect(url_for(
+                    "profile", username=session["user"]))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")

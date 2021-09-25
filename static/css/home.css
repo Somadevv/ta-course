@@ -5,7 +5,7 @@
   padding-top: 100px;
   position: relative;
   width: calc(100% -78px);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1)), url("/static/images/banner.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, .4)), url("/static/images/banner.png");
   height: 100vh;
   overflow-y: hidden;
   background-position: center;
@@ -25,6 +25,7 @@
   height: 275px;
   border-radius: 25px;
   transition: .6s;
+
 }
 
 /* HOME CONTENT */

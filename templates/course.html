@@ -2,31 +2,50 @@
 {% block content %}
 <div class="course-container">
     <div class="module-container">
+        
         <div class="module-list">
             <ul>
-                {% for m in moduleButtons %}
-                <li class="modules module-item title-text-sm">{{ m.title }}</li>
-                {% endfor %}
+                <li class="modules module-item title-text-sm">Candlesticks</li>
+                <li class="modules module-item title-text-sm">Trend Patterns</li>
+                <li class="modules module-item title-text-sm">Support And Resistance</li>
+                <li class="modules module-item title-text-sm">Moving Average</li>
+                <li class="modules module-item title-text-sm">Flag Patterns</li>
+                <li class="modules module-item title-text-sm">Fibonacci Retracement</li>
+                <li class="modules module-item title-text-sm">Fibonacci Extensions</li>
+                <li class="modules module-item title-text-sm">Golden Cross</li>
+                <li class="modules module-item title-text-sm">Death Cross</li>
+                <li class="modules module-item title-text-sm">Capitulation</li>
+                <li class="modules module-item title-text-sm">Platykurtic</li>
+                <li class="modules module-item title-text-sm">Head and Shoulders</li>
             </ul>
         </div>
     </div>
-    <div class="course-view">
-        <div class="module-intro">
-            <img src="/static/images/trading3.png" alt="module intro image" id="module-intro-image">
+    <div class="course-view" id="view">
+        <div class="module-intro-container">
+            <img src="/static/images/banner.png" alt="module intro image" id="module-intro-image">
             <div class="module-box">
-                <span class="intro-title">Title</span>
-                <p class="intro-description">In 2014, the Department of Health made improvement in mental health a key priority. Its first objective was to ensure that mental health had equal priority with that of physical health and its second was to reduce the gap between people with mental health problems and the rest of the population (Department of Health, 2014).</p>
+                <span class="intro-title">Technical Analysis for begginers</span>
+                <p class="intro-description descriptive-text-md">One of the biggest parts about becoming a successful trader is to understand <b>Technical Analysis (TA)</b>. Learning Technical Analysis can be very intimidating, this course will cover the very basics of <b>TA</b> to help you get a better understanding of the important of the fundamentals and concepts used in the world of trading.</p>
+                
             </div>
         </div>
-        <div class="module-content">
-            <span class="content-title">What is a candlestick pattern</span>
-            <p class="content-description">In 2014, the Department of Health made improvement in mental health a key priority. Its first objective was to ensure that mental health had equal priority with that of physical health and its second was to reduce the gap between people with mental health problems and the rest of the population (Department of Health, 2014). Their vision was that everyone who needs it should have access to an intervention, through the ‘Improving Access to Psychological Therapies’ (IAPT) programmes including children and young people. While the Department of Health aimed to reduce waiting times in accessing services, more people were being offered the service and as a result, waiting lists significantly increased. This is a particular issue in Wales, where a significant amount of the population reside in rural areas and at considerable distance from psychological therapeutic services.
+        <div class="module-content-container">
+            <span class="module-title"></span>
+            <ul class="keys">
+                <br>
+                <span class="key-title intro-title" id="summary">Summary</span>
+                <span class="hidden key-title intro-title" id="key-points">Key Points</span>
+                <br><hr><br>
+                <li class="descriptive-text-lg" id="key1"></li>
+                <li class="descriptive-text-lg" id="key2"></li>
+                <li class="descriptive-text-lg" id="key3"></li>
+                <li class="descriptive-text-lg" id="key4"></li>
+            </ul>
 
-                In Cardiff, research is currently ongoing to evaluate the potential of digital technology to both reduce waiting times in accessing services and provide people experiencing mental health problems access to much-needed support.</p>
-            
         </div>
     </div>
 </div>
+
 
 
 {% endblock %}
