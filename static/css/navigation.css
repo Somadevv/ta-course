@@ -78,8 +78,7 @@
   }
   #logged-in:hover, #logged-out:hover {
     position: absolute;
-  
-    width: 50px;
+    width: 100%;
   }
   .sidebar.open {
     position: absolute;

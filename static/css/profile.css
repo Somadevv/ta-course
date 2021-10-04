@@ -1,0 +1,39 @@
+body {
+  background-color: #121212;
+}
+.profile-container {
+    margin-top: 150px;
+    position: relative; 
+    display: flex;
+    justify-content: center;
+}
+.username {
+    text-align: center;
+    font-size: 2rem;
+    color: white;
+  }
+
+.attributes {
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 30px;  
+    height: 200px;    
+}
+.posts, .has-completed {
+    display: inline-block;
+    font-size: 1.8rem;
+    color: white;
+}
+.posts {
+    margin-right: 100px;
+}
+
+@media (max-width: 768px) {
+    .posts {
+        margin-right: 10px;
+    }
+    .attributes {
+        width: 100%;
+    }
+}

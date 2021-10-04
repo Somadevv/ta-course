@@ -9,8 +9,6 @@ if os.path.exists("env.py"):
     import env
 
 
-
-
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
@@ -18,20 +16,10 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
-
 @app.route("/")
 @app.route("/home")
 def home():
-    if session:
-        return render_template('course.html')
-    else:
-        return render_template("home.html")
-
-    
-    
-@app.route("/modules")
-def modules():
-    return render_template("modules.html")
+    return render_template("home.html")
 
 
 @app.route("/course")
@@ -39,6 +27,47 @@ def course():
     titles = mongo.db.modules.find().sort("title", 1)
     return render_template("course.html", titles=titles)
 
+
+@app.route("/feedback")
+def feedback():
+    comments = list(mongo.db.comments.find())
+    return render_template("feedback.html", comments=comments)
+
+
+@app.route("/add_comment", methods=["GET", "POST"])
+def add_comment():
+    if request.method == "POST":
+        submit = {
+            "comment": request.form.get("comment"),
+            "created_by": session["user"]
+        }
+        mongo.db.comments.insert_one(submit)
+        flash("Task Successfully Added")
+        return redirect(url_for("feedback"))
+
+    return render_template("add_comment.html")
+
+
+@app.route("/edit_comment/<comment_id>", methods=["GET", "POST"])
+def edit_comment(comment_id):
+    if request.method == "POST":
+        submit = {
+            "comment": request.form.get("comment"),
+            "created_by": session["user"]
+        }
+        mongo.db.comments.update({"_id": ObjectId(comment_id)}, submit)
+        flash("Task Successfully Updated")
+        return redirect(url_for("feedback"))
+
+    comment = mongo.db.comments.find_one({"_id": ObjectId(comment_id)})
+    return render_template("edit_comment.html", comment=comment)
+
+
+@app.route("/delete_comment/<comment_id>")
+def delete_comment(comment_id):
+    mongo.db.comments.remove({"_id": ObjectId(comment_id)})
+    flash("Task Successfully Deleted")
+    return redirect(url_for("feedback"))
 
 @app.route("/about")
 def about():
@@ -85,7 +114,7 @@ def login():
                     request.form.get("username")))
 
                 return redirect(url_for(
-                    "profile", username=session["user"]))
+                    "home"))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
@@ -97,18 +126,6 @@ def login():
             return redirect(url_for("login"))
 
     return render_template("login.html")
-
-
-@app.route("/profile/<username>", methods=["GET", "POST"])
-def profile(username):
-    # grab the session user's username from db
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
-
-    if session["user"]:
-        return render_template("profile.html", username=username)
-
-    return redirect(url_for("login"))
 
 
 @app.route("/logout")

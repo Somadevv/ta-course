@@ -1,0 +1,5 @@
+.feedback-container {
+    position: relative;
+    left: 78px;
+    width: calc(100vw - 78px);
+}

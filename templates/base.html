@@ -24,6 +24,10 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}" type="text/css">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}" type="text/css">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/404.css') }}" type="text/css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}" type="text/css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/add_comment.css') }}" type="text/css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/edit_comment.css') }}" type="text/css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/feedback.css') }}" type="text/css">
 
   <!-- TITLE -->
   <title>Trading Course</title>
@@ -35,32 +39,59 @@
     <div class="nav-wrapper main-color">
       <a href="{{ url_for('home') }}" class="brand-logo title-text-lg">Trading Course</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-      <a href="#" style="float: right;"><i class='bx bx-log-out' id="mobile-logout-icon"></i><span class="links_name"
-          id="mobile-logout-link">Logout</span></a>
-    </div>
   </nav>
 
   <ul class="sidenav main-color" id="mobile-demo">
+    {% if session.user %}
     <li>
-      <a href="#" id="mobile-link1">
-        <i class='bx bx-grid-alt' id="mobile-icon1"></i>
-        <span class="links_name">Dashboard</span></a>
+      <a href="{{ url_for('home') }}" id="mobile-link1">
+        <i class='bx bx-home' id="mobile-icon1"></i>
+        <span class="links_name">Home</span></a>
     </li>
     <li>
-      <a href="#" id="mobile-link2">
-        <i class='bx bx-user' id="mobile-icon2"></i>
-        <span class="links_name">User</span></a>
+      <a href="{{ url_for('course') }}" id="mobile-link1">
+        <i class='bx bx-folder-open' id="mobile-icon1"></i>
+        <span class="links_name">Course</span></a>
     </li>
     <li>
-      <a href="#" id="mobile-link3">
-        <i class='bx bx-chat' id="mobile-icon3"></i>
-        <span class="links_name">Messages</span></a>
+      <a href="{{ url_for('feedback') }}" id="mobile-link1">
+        <i class='bx bx-book-open' id="mobile-icon1"></i>
+        <span class="links_name">Feedback</span></a>
     </li>
     <li>
-      <a href="#" id="mobile-link4">
-        <i class='bx bx-pie-chart-alt-2' id="mobile-icon4"></i>
-        <span class="links_name">Analytics</span></a>
+      <a href="{{ url_for('about') }}" id="mobile-link1">
+        <i class='bx bx-info-circle' id="mobile-icon1"></i>
+        <span class="links_name">About</span></a>
     </li>
+    <li id="logged-in">
+      <a href="{{ url_for('logout') }}">
+        <i class='bx bx-log-out' id="login-highlighter"></i>
+        <span class="links_name">Logout ({{ session.user }})</span>
+      </a>
+      <span class="tooltip">Logout</span>
+    </li>
+
+    {% else %}
+    <li>
+      <a href="{{ url_for('home') }}">
+        <i class='bx bx-home'></i>
+        <span class="links_name">Home</span></a>
+    </li>
+    <li>
+      <a href="{{ url_for('about') }}">
+        <i class='bx bx-info-circle'></i>
+        <span class="links_name">About</span></a>
+    </li>
+    <li id="logged-out">
+      <a href="{{ url_for('login') }}" id="mobile-lin3">
+        <i class='bx bx-user'></i>
+        <span class="links_name">Login</span>
+      </a>
+      <span class="tooltip">Login</span>
+    </li>
+    
+    {% endif %}
+
   </ul>
 
   <!-- DESKTOP NAVIGATION SIDEBAR -->
@@ -82,14 +113,6 @@
 
       {% if session.user %}
       <li>
-        <a href="{{ url_for('profile', username=session['user']) }}">
-          <i class='bx bxs-contact'></i>
-          <span class="links_name">Profile</span>
-        </a>
-        <span class="tooltip">Profile</span>
-      </li>
-      {% endif %}
-      <li>
         <a href="{{ url_for('course') }}">
           <i class='bx bx-folder-open'></i>
           <span class="links_name">Course</span>
@@ -97,12 +120,15 @@
         <span class="tooltip">Course</span>
       </li>
       <li>
-        <a href="{{ url_for('modules') }}">
+        <a href="{{ url_for('feedback') }}">
           <i class='bx bx-book-open'></i>
-          <span class="links_name">Modules</span>
+          <span class="links_name">Feedback</span>
         </a>
-        <span class="tooltip">Modules</span>
+        <span class="tooltip">Feedback</span>
       </li>
+      {% endif %}
+
+
       <li>
         <a href="{{ url_for('about') }}">
           <i class='bx bx-info-circle'></i>
@@ -114,7 +140,7 @@
       <li id="logged-in">
         <a href="{{ url_for('logout') }}">
           <i class='bx bx-log-out' id="login-highlighter"></i>
-          <span class="links_name">Logout</span>
+          <span class="links_name">Logout ({{ session.user }})</span>
         </a>
         <span class="tooltip">Logout</span>
       </li>

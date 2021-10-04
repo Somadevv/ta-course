@@ -87,7 +87,6 @@ body {
 }
 .title-text-lg {
   font-size: 2rem;
-  
 }
 .title-text-md {
   font-size: 1.5rem;
@@ -101,7 +100,6 @@ body {
   font-size: 1.25rem;
 }
 .descriptive-text-md {
-  
   font-size: 1rem;
 }
 .descriptive-text-sm {
@@ -111,6 +109,19 @@ body {
 .logo-nav {
   width: 50px;
   height: 50px;
+}
+.text-shadow {
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+.flashes h4 {
+  line-height: 2;
+}
+.btn-small {
+  margin: 5px;
+}
+.collapsible-header .col strong {
+  margin: 5px;
+  line-height: 42px;
 }
 
 
