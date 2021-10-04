@@ -1,17 +1,8 @@
+/*jshint esversion: 6 */ 
+
 const sideBar = document.querySelector(".sidebar");
 const closeBtn = document.querySelector("#btn");
-const placeholder = document.getElementById("placeholder");
-const boxes = Array.from(document.querySelectorAll(".box"));
-boxes.forEach((box, index) => {
-  // Hover on
-  box.addEventListener("mouseenter", () => {
-    boxes[index].style.opacity = 1;
-  });
-  // Hover off
-  box.addEventListener("mouseleave", () => {
-    boxes[index].style.opacity = 0.8;
-  });
-});
+
 
 // Toggle logo display property for side navigation
 const toggleLogo = () => {
@@ -44,21 +35,33 @@ const toggleWindow = (x) => {
   let mobileNav = document.querySelector("#mobile-nav");
   if (x.matches) {
     // If media query matches
-    for (i = 0; i < modules.length; i++){
-      modules[i].innerHTML = i + 1
+    for (let i = 0; i < modules.length; i++){
+      modules[i].innerHTML = i + 1;
     }
     mobileNav.classList.remove("hidden");
     sideBar.classList.add("hidden");
   } else {
-    modules.innerHTML = "asd"
     mobileNav.classList.add("hidden");
     sideBar.classList.remove("hidden");
   }
 };
 
+const whenClick = (node) => {
+  const element = document.querySelector(".highlighted");
+  element && element.classList.remove("highlighted");
+  node.classList.add("highlighted");
+};
+
+const addClicks = () => {
+  document
+    .querySelectorAll(".modules")
+    .forEach((n) => n.addEventListener("click", () => whenClick(n)));
+};
+
 $(document).ready(function () {
   let newWindow = window.matchMedia("(max-width: 768px)");
   $(".sidenav").sidenav();
+  addClicks();
   toggleWindow(newWindow); // Call listener function at run time
   newWindow.addListener(toggleWindow); // Attach listener function on state changes
 });

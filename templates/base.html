@@ -23,8 +23,6 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='css/logout.css') }}" type="text/css">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}" type="text/css">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}" type="text/css">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/404.css') }}" type="text/css">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}" type="text/css">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/add_comment.css') }}" type="text/css">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/edit_comment.css') }}" type="text/css">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/feedback.css') }}" type="text/css">
@@ -89,7 +87,7 @@
       </a>
       <span class="tooltip">Login</span>
     </li>
-    
+
     {% endif %}
 
   </ul>
@@ -164,7 +162,6 @@
 
 
   <!-- SCRIPTS -->
-  <script type="text/javascript" src="/static/data/modules.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"
@@ -173,11 +170,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="{{ url_for('static', filename='scripts/script.js') }}"></script>
   <script src="{{ url_for('static', filename='scripts/course.js') }}"></script>
-  <!-- <script>
-    $(document).ready(() => addClicks());
-  </script> -->
-
-
 </body>
 
 </html>

@@ -1,5 +1,21 @@
 {% extends "base.html" %}
 {% block content %}
+<div class="about-container">
+    <h1 class="title" >- <strong class="title-text-lg">Our Mission</strong> -</h1>
+    <h4 class="title-description">To provide easy access into the world of Trading</h4>
+    <div class="about-content">
+        <p>Following this course you will have basic knowledge on some of the most important concepts in
+            trading. Technical Analysis is one of the most commonly used methods to understanding/predicting market trends. The
+            course is designed to introduce key concepts rather than specific methods of trading, giving you the knowledge to
+            then progress your learning further to becoming a trader!</p>
+    </div>
+    <div class="col s12 center-align">
+        <a href="{{ url_for('register') }}" class="btn-small light-blue darken-1 text-shadow" id="hover-state">
+            Get Started</a>
+        </div>
+
+    </div>
+</div>
 
 
 {% endblock %}

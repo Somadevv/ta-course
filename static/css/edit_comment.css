@@ -3,3 +3,10 @@
     left: 78px;
     width: (100vw -78px);
 }
+@media (max-width: 768px) {
+    .edit-container {
+        left: 0;
+        width: 100%;
+    }
+
+}

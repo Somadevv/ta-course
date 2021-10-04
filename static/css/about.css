@@ -1,0 +1,45 @@
+body {
+  background-color: #121212;
+}
+.about-container {
+  margin-top: 100px;
+  position: relative;
+  left: 78px;
+  width: calc(100% - 78px);
+}
+.title,
+.title-description,
+.about-content {
+  margin-top: 25px;
+  text-align: center;
+  color: white;
+}
+.title {
+  font-size: 2rem;
+}
+.title strong {
+  color: var(--orange);
+  font-size: 3rem;
+}
+.title-description {
+}
+.about-content {
+  width: 100%;
+  text-align: center;
+}
+
+.about-content p {
+  position: relative;
+  width: 75%;
+  margin: 50px auto;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+    .about-container {
+        left: 0;
+        width: 100%;
+    }
+
+}

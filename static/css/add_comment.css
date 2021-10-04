@@ -3,3 +3,10 @@
   left: 78px;
   width: calc(100vw -178px);
 }
+@media (max-width: 768px) {
+    .add-comment-container {
+        left: 0;
+        width: 100%;
+    }
+
+}

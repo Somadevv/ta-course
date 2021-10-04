@@ -22,7 +22,7 @@
 .box {
   background-color: var(--main-bg);
   flex: 0 32%;
-  height: 275px;
+  height: 300px;
   border-radius: 25px;
   transition: .6s;
 
@@ -64,6 +64,14 @@
   }
   .home-trading-image-alt {
     display: none;
+  }
+  .box {
+    flex: 0 100%;
+    margin-bottom: 20px;
+    height: 300px;
+  }
+  .hero-content-container {
+    height: auto;
   }
 }
 

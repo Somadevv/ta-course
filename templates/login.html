@@ -24,10 +24,10 @@
                 </div>
                 <!-- login -->
                 <div class="row">
-                    <button type="submit" class="col s12 btn-large light-blue darken-4 text-shadow">
-                        Login <i class="fas fa-sign-in-alt"></i>
-                    </button>
-                </div>
+                    <div class="col s12 center-align">
+                        <button type="submit" class="btn-large light-blue darken-1 text-shadow" id="hover-state">
+                            Login</a>
+                        </div>
             </div>
         </form>
     </div>
@@ -36,7 +36,7 @@
         <div class="col s12">
             <p class="center-align descriptive-text-lg" style="color: white;">
                 Don't have an account?
-                <a href="{{ url_for('register') }}" class="light-blue-text text-darken-4 title-text-md">Register</a>
+                <a href="{{ url_for('register') }}" class="title-text-sm" style="color: var(--orange);">Register</a>
             </p>
         </div>
     </div>

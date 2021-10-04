@@ -8,7 +8,7 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-pencil-alt prefix light-blue-text text-darken-4"></i>
-                <input id="comment" name="comment" minlength="5" maxlength="50" type="text" class="validate"
+                <input id="comment" name="comment" minlength="5" maxlength="250" type="text" class="validate"
                     required>
                 <label for="comment">Comment</label>
             </div>
@@ -21,7 +21,7 @@
                 <a href="{{ url_for('feedback') }}" class="btn-large red darken-1 text-shadow">
                     Cancel <i class="fas fa-plus-square right"></i>
                 </a>
-                <button type="submit" class="btn-large light-blue darken-1 text-shadow">
+                <button type="submit" class="btn-large green darken-1 text-shadow">
                     Add Comment <i class="fas fa-plus-square right"></i>
                 </button>
 
