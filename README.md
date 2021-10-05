@@ -203,8 +203,25 @@ About Us:
 * [About-Us](static/images/readme/wireframes/pdf/about-us.pdf)
 * [404](static/images/readme/wireframes/pdf/404.pdf)
 
+# Database Design
+####MongoDB Object format examples:
 
-#### Security
+**Collection: users**
+{
+_id: Int
+username: String
+password: String
+}
+
+**Collection: comments**
+{
+_id: Int
+comment: String
+created_by: String
+}
+
+
+# Security
 
 Database connection details are set up in an [env.py](https://pypi.org/project/env.py/) for development, for 
 security reasons this is not uploaded to GitHub so that database and connection details are not visible to 
@@ -215,24 +232,29 @@ users. In production these are stored in Heroku.
 ### Design
 
 #### Colour Scheme
-TO BE FILLED IN
+  - The main background colour used for the website landing page: can be seen on ('home.html)
+  - The secondary background colour used for the websites course page: can be seen on ('course.html)
+  - The third background colour used for the websites landing page: can be seen on ('home.html)
+  - The main colour used for typography including hover states
 
 
 #### Typography
-TO BE FILLED IN
+All the title typography used in this website inherits the google font 'Ubuntu' for a modern looking text font
 
 
 #### Imagery
-TO BE FILLED IN
+All images apart from the logo was sourced from [Investopedia](https://www.investopedia.com/)
 
 
 ## Differences to Design
-TO BE FILLED IN
+The side navigation bar was not in my initial design plan. I found a sidebar navigation that suited my app design perfectly so i used this instead of the standard navigation found on the majority of websites on the internet. The sidebar navigation used on this website can be found [here](https://www.youtube.com/watch?v=wEfaoAa99XY&list=LLtq7zXJyPFDANiQE5jmtrdg&index=1)
 
 ## Features
 
 #### Existing Features
-TO BE FILLED IN
+- A modules page that allows users to select which module they'd like to view
+- Sign-up/Sign-in functionality to allow users to save their progress throughout the web application
+- Feedback functionality to allow users to leave feedback on the website
 
 ### Features Left to Implement
 * Additional courses added to the website 
@@ -302,6 +324,23 @@ TO BE FILLED IN
 
 ****
 ## Testing
+| Test | Area | Process | Result | 
+| ----------- | ----------- | ----------- | ------- | 
+| T1 | Global | The website was tested on multiple browsers (Chrome, firefox, IE) for responsive design. All tests passed without fail | Passed |
+| T2 | Homepage | The home screen was first tested to ensure suitability and accuracy so that it responded well to all devices (mobile/tablet/desktop)| Passed |
+| T3 | Global | Tested all buttons on the website worked as intended, this included testing the HREF links directed to the correct places | Passed|
+| T4 | Course | Tested all of the module buttons on the course page to ensure they displayed the correct corrisponding information | Passed|
+| T5 | Course | Tested all the modules display the corrisponding information relative to the module presented | Passed|
+| T6 | Validation | Tested the 'Login/Register' buttons correctly validated the user input to ensure no boundaries were broken within the web application | Passed|
+
+### Errors
+| Error | Title | Analysis | 
+| ----------- | ----------- | ----------- | 
+| E1 | Unresponsive |  During the developement process of this project the responsive design was flawed due to the side navigation bar being positioned 'Absoulute'. To resolve this I had to manually add a 'left' value of '78px' to move all content pages over to avoid collision with the navigation menu |
+| E2 | Data |  During the developement process of this project the data fetched from the database wasn't displaying correctly, this was caused from a misspelling inside the feedback.html page |
+| E3 | Unresponsive |  During the developement process of this project the modules page found on the course.html wasn't working along with the database. At first I stored all of the modules/data inside the MongoDB, This in course caused looping errors, in turn I resulted to hard coding all of the modules data inside the course.js |
+
+
 
 ### Test Strategy
 #### **Summary**
@@ -315,8 +354,6 @@ JavaScript code must pass through the [JSHint Validator](https://jshint.com/)
 
 Python Code must pass through [PEP8 Validator](http://pep8online.com/)
 
-#### **High Level Test Cases**
-TO BE FILLED IN
 
 #### **Access Requirements**
 Tester must have access to MongoDB in order to manually verify the insertion 
@@ -326,9 +363,7 @@ of records to users and events collections
 #### **Assumptions and Dependencies**
 Testing is dependent on the website being deployed live on Heroku
 
-### Test Results
 
-TO BE FILLED IN
 
 ### Project Creation
 
@@ -356,6 +391,7 @@ MONGO_URI, MONGO_DBNAME and SECRET_KEY. You must have the connection details in 
 1. Select create new app
 1. Enter the app name
 1. Select region
+1. Deploy App
 
 **Set up connection to Github Repository:**
 
@@ -391,15 +427,16 @@ for your own idea. - Definition from [Github Docs](https://docs.github.com/en/fr
 ****
 
 ## Credits
-[CodingLab](https://www.youtube.com/watch?v=wEfaoAa99XY&list=LLtq7zXJyPFDANiQE5jmtrdg&index=1)
+[Youtube](https://www.youtube.com/watch?v=wEfaoAa99XY&list=LLtq7zXJyPFDANiQE5jmtrdg&index=1)
 This website uses the HTML/CSS sidebar navigation linked in the description of the video linked above
 
 
-
-
-
 ### Acknowledgements
-TO BE FILLED IN
+I'd like to give special thanks to the the following people for their help with my project:
+
+Slack user BenKav_Alumni for helping me solve the database issues I had during the development of this project and helping me understand key concepts in Python/Javascript
+
+My mentor Spencer Baribell for his guidance throughout the project
 
 
 ****
