@@ -1,15 +1,19 @@
 {
-    "name": "node-example",
-    "version": "1.0.0",
-    "description": "This example is so cool.",
-    "main": "web.js",
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "keywords": [
-      "example",
-      "heroku"
-    ],
-    "author": "jane-doe",
-    "license": "MIT"
-  }
+  "name": "ta-course",
+  "version": "1.0.0",
+  "description": "![Home](static/images/logo.png)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Somadevv/ta-course.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Somadevv/ta-course"
+  },
+  "homepage": "https://github.com/Somadevv/ta-course#readme"
+}
