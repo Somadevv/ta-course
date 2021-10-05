@@ -340,6 +340,42 @@ The side navigation bar was not in my initial design plan. I found a sidebar nav
 | E2 | Data |  During the developement process of this project the data fetched from the database wasn't displaying correctly, this was caused from a misspelling inside the feedback.html page |
 | E3 | Unresponsive |  During the developement process of this project the modules page found on the course.html wasn't working along with the database. At first I stored all of the modules/data inside the MongoDB, This in course caused looping errors, in turn I resulted to hard coding all of the modules data inside the course.js |
 
+#Validators 
+* # **HTML**
+    * No errors were returned when passing the **base.html** file through the official [W3C validator](https://validator.w3.org)
+
+        #### **base.html**
+
+        <img src="static/images/readme/images/html_val.png" alt="validator result" width="500" height="200"/>
+
+        #### **home.html**
+
+        When using the **calc** property, it flags as an error. Upon researching a solution I found that infact it is still valid CSS, source to this can be found [Here](https://www.456bereastreet.com/archive/200911/vendor-specific_extensions_are_invalid_css/)
+
+        <img src="static/images/readme/images/home_val.png" alt="validator result" width="500" height="200"/>
+
+        
+* # **CSS**
+    * All of the following files were passed through the official [Jigsaw validator](https://jigsaw.w3.org/css-validator)
+
+        #### **base.css**
+
+        <img src="static/images/readme/images/base_val.png" alt="validator result" width="500" height="200"/>
+
+        #### **home.css**
+
+        <img src="static/images/readme/images/home_css_val.png" alt="validator result" width="500" height="200"/>
+
+
+        #### **course.css**
+
+        <img src="static/images/readme/images/course_val.png" alt="validator result" width="500" height="200"/>
+
+        #### **about.css**
+
+        <img src="static/images/readme/images/about_val.png" alt="validator result" width="500" height="200"/>
+
+There are other HTML/CSS files found in this project but do inherit from the base.html/css files and pass the validators. I did not include every file as it seems unnecessary
 
 
 ### Test Strategy
@@ -362,7 +398,6 @@ of records to users and events collections
 
 #### **Assumptions and Dependencies**
 Testing is dependent on the website being deployed live on Heroku
-
 
 
 ### Project Creation

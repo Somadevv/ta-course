@@ -12,7 +12,7 @@
     z-index: 99;
     transition: all 0.5s ease;
   }
-  #login-highlighter {
+  .login-highlighter {
     color: var(--orange);
   }
   /* WHEN SIDEBAR IS TOGGLED */
@@ -71,13 +71,7 @@
     height: 90%;
   }
   
-  #logged-in, #logged-out {
-    position: absolute;
-    bottom: 0;
-    width: 50px;
-  }
-  #logged-in:hover, #logged-out:hover {
-    position: absolute;
+  .logged-in, .logged-out {
     width: 100%;
   }
   .sidebar.open {

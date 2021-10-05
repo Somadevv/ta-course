@@ -1,4 +1,4 @@
-
+/* HERO CONTENT */
 .hero-content-container{
   position: relative;
   text-align: center;
@@ -20,7 +20,7 @@
 }
 
 .box {
-  background-color: var(--main-bg);
+  background-color: #11101D;
   flex: 0 32%;
   height: 300px;
   border-radius: 25px;

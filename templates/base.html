@@ -37,33 +37,34 @@
     <div class="nav-wrapper main-color">
       <a href="{{ url_for('home') }}" class="brand-logo title-text-lg">Trading Course</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      </div>
   </nav>
 
   <ul class="sidenav main-color" id="mobile-demo">
     {% if session.user %}
     <li>
-      <a href="{{ url_for('home') }}" id="mobile-link1">
-        <i class='bx bx-home' id="mobile-icon1"></i>
+      <a href="{{ url_for('home') }}">
+        <i class='bx bx-home'></i>
         <span class="links_name">Home</span></a>
     </li>
     <li>
-      <a href="{{ url_for('course') }}" id="mobile-link1">
-        <i class='bx bx-folder-open' id="mobile-icon1"></i>
+      <a href="{{ url_for('course') }}">
+        <i class='bx bx-folder-open'></i>
         <span class="links_name">Course</span></a>
     </li>
     <li>
-      <a href="{{ url_for('feedback') }}" id="mobile-link1">
-        <i class='bx bx-book-open' id="mobile-icon1"></i>
+      <a href="{{ url_for('feedback') }}">
+        <i class='bx bx-book-open'></i>
         <span class="links_name">Feedback</span></a>
     </li>
     <li>
-      <a href="{{ url_for('about') }}" id="mobile-link1">
-        <i class='bx bx-info-circle' id="mobile-icon1"></i>
+      <a href="{{ url_for('about') }}">
+        <i class='bx bx-info-circle'></i>
         <span class="links_name">About</span></a>
     </li>
-    <li id="logged-in">
+    <li class="logged-in">
       <a href="{{ url_for('logout') }}">
-        <i class='bx bx-log-out' id="login-highlighter"></i>
+        <i class='bx bx-log-out login-highlighter'></i>
         <span class="links_name">Logout ({{ session.user }})</span>
       </a>
       <span class="tooltip">Logout</span>
@@ -80,7 +81,7 @@
         <i class='bx bx-info-circle'></i>
         <span class="links_name">About</span></a>
     </li>
-    <li id="logged-out">
+    <li class="logged-out">
       <a href="{{ url_for('login') }}" id="mobile-lin3">
         <i class='bx bx-user'></i>
         <span class="links_name">Login</span>
@@ -135,17 +136,17 @@
         <span class="tooltip">About</span>
       </li>
       {% if session.user %}
-      <li id="logged-in">
+      <li class="logged-in">
         <a href="{{ url_for('logout') }}">
-          <i class='bx bx-log-out' id="login-highlighter"></i>
+          <i class='bx bx-log-out login-highlighter'></i>
           <span class="links_name">Logout ({{ session.user }})</span>
         </a>
         <span class="tooltip">Logout</span>
       </li>
       {% else %}
-      <li id="logged-out">
+      <li class="logged-out">
         <a href="{{ url_for('login') }}">
-          <i class='bx bx-user' id="login-highlighter"></i>
+          <i class='bx bx-user login-highlighter'></i>
           <span class="links_name">Login</span>
         </a>
         <span class="tooltip">Login</span>
