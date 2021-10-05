@@ -204,7 +204,7 @@ About Us:
 * [404](static/images/readme/wireframes/pdf/404.pdf)
 
 # Database Design
-####MongoDB Object format examples:
+#### MongoDB Object format examples:
 
 **Collection: users**
 {
