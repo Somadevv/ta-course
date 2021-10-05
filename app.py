@@ -1,3 +1,4 @@
+
 import os
 from flask import (
     Flask, flash, render_template,
@@ -7,6 +8,7 @@ from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
+
 
 # Mongo application variables
 app = Flask(__name__)
