@@ -7,7 +7,7 @@
     {% if comments|length > 0 %}
     <ul class="collapsible">
         {% for comment in comments %}
-
+            <li>
             <div class="collapsible-header white-text light-blue darken-4 text-shadow">
                 <div class="col s3">
                     &nbsp;{{ comment.comment }}
@@ -22,9 +22,9 @@
                     id="hover-state">Edit</a>
                 </div>
        
-</div>
+
                 {% endif %}
-            </div>
+                </div></li>
 
 
 
