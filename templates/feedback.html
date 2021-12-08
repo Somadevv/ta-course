@@ -13,6 +13,8 @@
                 </div>
             </div>
         </div>
+    </li>
+<li>
             <div class="edit-buttons">
                 {% if session.user|lower == comment.created_by|lower %}
                 <a href="{{ url_for('delete_comment', comment_id=comment._id) }}"
