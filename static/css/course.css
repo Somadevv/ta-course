@@ -149,7 +149,7 @@ hr {
     height: 100%;
   }
 }
-@media (max-width: 400px) {
+@media (max-width: 500px) {
   #module-intro-image {
     width: 50%;
   }
