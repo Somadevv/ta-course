@@ -43,7 +43,7 @@
 }
 #module-intro-image {
   float: right;
-  width: 37.5%;
+  width: 50%;
   height: auto;
   margin-right: 10px;
 }
@@ -147,5 +147,10 @@ hr {
     margin: 0;
     width: 80%;
     height: 100%;
+  }
+}
+@media (max-width: 400px) {
+  #module-intro-image {
+    width: 50%;
   }
 }
