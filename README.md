@@ -40,7 +40,7 @@
 ## User Experience Design
 ### **The Strategy Plane**
 
-This project focuses on providing a well-structured, digestible approach to technical analysis in an introductory course format targeted at beginners. Learners will receive an introduction to the world of trading looking in-depth at the importance of technical analysis. (Add another thing they will learn)
+This project focuses on providing a well-structured, digestible approach to technical analysis in an introductory course format targeted at beginners. Learners will receive an introduction to the world of trading looking in-depth at the importance of technical analysis.
 
 We start with a beginner’s guide to the financial marketplace; from there we take a deeper look at… This will provide a comprehensive overview of the fundamentals of technical analysis and prepare the user to progress through further intermediate studies.
 
